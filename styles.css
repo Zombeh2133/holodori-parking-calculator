@@ -438,68 +438,170 @@ select:focus {
 }
 
 .community-card {
-  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+  min-height: 152px;
+  padding: 24px 26px 24px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 26px;
-  border-color: rgba(139, 124, 255, 0.18);
+  gap: 28px;
+  border-color: rgba(139, 124, 255, 0.22);
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(139, 124, 255, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(24, 25, 43, 0.98),
+      rgba(15, 18, 31, 0.98)
+    );
+}
+
+.community-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -110px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(102, 217, 255, 0.055);
+  filter: blur(2px);
+}
+
+.community-accent {
+  position: absolute;
+  inset: 18px auto 18px 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #9b8cff, #68ddff);
+  box-shadow: 0 0 22px rgba(117, 149, 255, 0.34);
+}
+
+.community-main {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.community-mark {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(168, 157, 255, 0.28);
+  border-radius: 16px;
+  color: #e8e5ff;
   background:
     linear-gradient(
       145deg,
-      rgba(139, 124, 255, 0.09),
-      rgba(102, 217, 255, 0.035)
+      rgba(139, 124, 255, 0.2),
+      rgba(102, 217, 255, 0.08)
     );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
 .community-card-copy {
   min-width: 0;
 }
 
+.community-eyebrow {
+  margin-bottom: 6px;
+}
+
 .community-card h2 {
-  margin-bottom: 8px;
+  margin-bottom: 7px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
 }
 
 .community-card p:not(.eyebrow) {
-  max-width: 620px;
+  max-width: 600px;
   margin: 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.community-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.community-tags span {
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  color: #c5c8d6;
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 11px;
+  font-weight: 750;
 }
 
 .community-cta {
+  position: relative;
+  z-index: 1;
   flex: 0 0 auto;
+  min-width: 146px;
+  min-height: 46px;
+  padding: 0 16px 0 18px;
+  gap: 12px;
   white-space: nowrap;
+  color: #0b0d15;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #9f92ff, #72dbff);
+  box-shadow:
+    0 12px 28px rgba(108, 130, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .discord-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 0 14px;
-  border-radius: 11px;
-  color: var(--text);
   text-decoration: none;
   font-size: 13px;
-  font-weight: 800;
-  border: 1px solid rgba(139, 124, 255, 0.24);
-  background: rgba(139, 124, 255, 0.12);
+  font-weight: 850;
   transition:
     transform 150ms ease,
-    border-color 150ms ease,
-    background 150ms ease;
+    box-shadow 150ms ease,
+    filter 150ms ease;
 }
 
 .discord-button:hover {
-  transform: translateY(-1px);
-  border-color: rgba(139, 124, 255, 0.48);
-  background: rgba(139, 124, 255, 0.18);
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 16px 34px rgba(108, 130, 255, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .discord-button:focus-visible {
-  outline: 3px solid rgba(139, 124, 255, 0.32);
-  outline-offset: 3px;
+  outline: 3px solid rgba(139, 124, 255, 0.35);
+  outline-offset: 4px;
+}
+
+.community-arrow {
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 150ms ease;
+}
+
+.discord-button:hover .community-arrow {
+  transform: translateX(3px);
 }
 
 .results-card,
@@ -681,8 +783,13 @@ select:focus {
   }
 
   .community-card {
+    min-height: 0;
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .community-main {
+    align-items: flex-start;
   }
 
   .community-cta {
@@ -745,5 +852,25 @@ select:focus {
 
   .button-row button {
     flex: 1;
+  }
+
+  .community-card {
+    padding: 22px 20px 22px 24px;
+  }
+
+  .community-main {
+    gap: 13px;
+  }
+
+  .community-mark {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 11px;
+  }
+
+  .community-card h2 {
+    font-size: 18px;
   }
 }
