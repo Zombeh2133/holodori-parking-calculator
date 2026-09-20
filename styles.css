@@ -184,6 +184,12 @@ a {
   align-items: start;
 }
 
+.calculator-column {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
 .card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -431,27 +437,39 @@ select:focus {
   font-size: 13px;
 }
 
-.community-plug {
-  margin-top: 26px;
-  padding: 18px;
-  border: 1px solid rgba(139, 124, 255, 0.18);
-  border-radius: 15px;
+.community-card {
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  border-color: rgba(139, 124, 255, 0.18);
   background:
     linear-gradient(
       145deg,
-      rgba(139, 124, 255, 0.08),
+      rgba(139, 124, 255, 0.09),
       rgba(102, 217, 255, 0.035)
     );
 }
 
-.community-plug h3 {
+.community-card-copy {
+  min-width: 0;
+}
+
+.community-card h2 {
   margin-bottom: 8px;
 }
 
-.community-plug p:not(.eyebrow) {
-  margin: 0 0 16px;
+.community-card p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
+}
+
+.community-cta {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .discord-button {
@@ -660,6 +678,15 @@ select:focus {
 
   .app-layout {
     grid-template-columns: 1fr;
+  }
+
+  .community-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .community-cta {
+    width: 100%;
   }
 
   .summary-grid {
