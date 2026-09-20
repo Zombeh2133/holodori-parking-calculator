@@ -79,19 +79,6 @@ Node.js 18+ is enough; there are no npm dependencies.
 npm test
 ```
 
-## Deploy on GitHub Pages
-
-1. Create a new repository, for example `holodori-parking-calculator`.
-2. Put the files from this folder in the repository root.
-3. Push to GitHub.
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, select **Deploy from a branch**.
-6. Select your main branch and `/ (root)`.
-7. Save.
-
-Because the calculator is fully static, there is no database, API key,
-Railway service, or server process to maintain.
-
 ## Credit
 
 Jump-rope parking data and formula research by
