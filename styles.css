@@ -431,6 +431,59 @@ select:focus {
   font-size: 13px;
 }
 
+.community-plug {
+  margin-top: 26px;
+  padding: 18px;
+  border: 1px solid rgba(139, 124, 255, 0.18);
+  border-radius: 15px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 124, 255, 0.08),
+      rgba(102, 217, 255, 0.035)
+    );
+}
+
+.community-plug h3 {
+  margin-bottom: 8px;
+}
+
+.community-plug p:not(.eyebrow) {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 11px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid rgba(139, 124, 255, 0.24);
+  background: rgba(139, 124, 255, 0.12);
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.discord-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(139, 124, 255, 0.48);
+  background: rgba(139, 124, 255, 0.18);
+}
+
+.discord-button:focus-visible {
+  outline: 3px solid rgba(139, 124, 255, 0.32);
+  outline-offset: 3px;
+}
+
 .results-card,
 .guide-card {
   margin-top: 22px;
