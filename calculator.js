@@ -35,8 +35,8 @@ export function jumpGain({
   if (!(energyValue in ENERGY_MULTIPLIERS)) {
     throw new RangeError("Unsupported energy value.");
   }
-  if (!Number.isInteger(characters) || characters < 0 || characters > 5) {
-    throw new RangeError("Event characters must be from 0 to 5.");
+  if (!Number.isInteger(characters) || characters < 0 || characters > 10) {
+    throw new RangeError("Event characters must be from 0 to 10.");
   }
 
   const base = baseJumpPt(jumps);
@@ -315,8 +315,8 @@ export function calculateParkingPlan({
   if (!Number.isSafeInteger(target) || target < 0) {
     throw new RangeError("Target EP must be a whole non-negative number.");
   }
-  if (!Number.isInteger(characters) || characters < 0 || characters > 5) {
-    throw new RangeError("Event characters must be from 0 to 5.");
+  if (!Number.isInteger(characters) || characters < 0 || characters > 10) {
+    throw new RangeError("Event characters must be from 0 to 10.");
   }
   if (!Number.isInteger(max) || max < 0 || max > 100) {
     throw new RangeError("Max jumps must be a whole number from 0 to 100.");
