@@ -9,7 +9,7 @@ Users enter:
 
 - Current Event PT
 - Target / parking Event PT
-- Number of event characters (0–5, +20% each)
+- Number of event characters (0–10, +20% each)
 - Whether HoloPass is active
 - Whether Jump Rope is the featured +50% event minigame
 - Maximum jumps per run
